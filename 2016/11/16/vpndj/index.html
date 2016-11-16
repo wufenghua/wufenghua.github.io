@@ -1,0 +1,729 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="VPN," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="导语 本人经过多次win服务器上搭建VPN，出现各种错误，最后找到如下比较详细可靠的教程（博主亲测可用）。
+第一阶段：安装角色添加角色:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win服务器VPN搭建">
+<meta property="og:url" content="http://blog.sohua.cc/2016/11/16/vpndj/index.html">
+<meta property="og:site_name" content="搜华博客">
+<meta property="og:description" content="导语 本人经过多次win服务器上搭建VPN，出现各种错误，最后找到如下比较详细可靠的教程（博主亲测可用）。
+第一阶段：安装角色添加角色:">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn01.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn02.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn03.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn04.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn041.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn042.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn05.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn06.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn07.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn08.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn09.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn10.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn11.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn12.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn13.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn14.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn15.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn16.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn17.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn18.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn19.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn20.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn21.jpg">
+<meta property="og:image" content="http://blog.sohua.cc/img/vpn22.jpg">
+<meta property="og:updated_time" content="2016-11-16T13:01:51.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="win服务器VPN搭建">
+<meta name="twitter:description" content="导语 本人经过多次win服务器上搭建VPN，出现各种错误，最后找到如下比较详细可靠的教程（博主亲测可用）。
+第一阶段：安装角色添加角色:">
+<meta name="twitter:image" content="http://blog.sohua.cc/img/vpn01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.sohua.cc/2016/11/16/vpndj/"/>
+
+
+  <title> win服务器VPN搭建 | 搜华博客 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7ae6904cebe1f2e9c3065b9786de81fe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">搜华博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Search the blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                win服务器VPN搭建
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-16T00:00:00+08:00" content="2016-11-16">
+              2016-11-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/16/vpndj/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/vpndj/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>导语<br> 本人经过多次win服务器上搭建VPN，出现各种错误，最后找到如下比较详细可靠的教程（博主亲测可用）。</p>
+<h1 id="第一阶段：安装角色"><a href="#第一阶段：安装角色" class="headerlink" title="第一阶段：安装角色"></a>第一阶段：安装角色</h1><h2 id="添加角色"><a href="#添加角色" class="headerlink" title="添加角色"></a>添加角色</h2><p>:<img src="/img/vpn01.jpg" alt="IIS导出结果"><br><a id="more"></a></p>
+<h2 id="勾选”网络策略和访问服务”"><a href="#勾选”网络策略和访问服务”" class="headerlink" title="勾选”网络策略和访问服务”"></a>勾选”网络策略和访问服务”</h2><p>:<img src="/img/vpn02.jpg" alt="IIS导出结果"></p>
+<h2 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h2><p>:<img src="/img/vpn03.jpg" alt="IIS导出结果"></p>
+<h2 id="把图上选项全勾上"><a href="#把图上选项全勾上" class="headerlink" title="把图上选项全勾上"></a>把图上选项全勾上</h2><p>:<img src="/img/vpn04.jpg" alt="IIS导出结果"></p>
+<h2 id="然后：确认安装阶段"><a href="#然后：确认安装阶段" class="headerlink" title="然后：确认安装阶段"></a>然后：确认安装阶段</h2><p>:<img src="/img/vpn041.jpg" alt="IIS导出结果"></p>
+<h2 id="下一步安装"><a href="#下一步安装" class="headerlink" title="下一步安装"></a>下一步安装</h2><p>:<img src="/img/vpn042.jpg" alt="IIS导出结果"></p>
+<h1 id="第二阶段：配置VPN服务器"><a href="#第二阶段：配置VPN服务器" class="headerlink" title="第二阶段：配置VPN服务器"></a>第二阶段：配置VPN服务器</h1><h2 id="点击进入服务器管理器——路由和远程访问"><a href="#点击进入服务器管理器——路由和远程访问" class="headerlink" title="点击进入服务器管理器——路由和远程访问"></a>点击进入服务器管理器——路由和远程访问</h2><p>:<img src="/img/vpn05.jpg" alt="IIS导出结果"></p>
+<h2 id="右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）"><a href="#右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）" class="headerlink" title="右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）"></a>右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）</h2><p>:<img src="/img/vpn06.jpg" alt="IIS导出结果"></p>
+<h2 id="弹出配置向导，并点击下一步："><a href="#弹出配置向导，并点击下一步：" class="headerlink" title="弹出配置向导，并点击下一步："></a>弹出配置向导，并点击下一步：</h2><p>:<img src="/img/vpn07.jpg" alt="IIS导出结果"></p>
+<h2 id="请务必选择“自定义配置”"><a href="#请务必选择“自定义配置”" class="headerlink" title="请务必选择“自定义配置”"></a>请务必选择“自定义配置”</h2><p>:<img src="/img/vpn08.jpg" alt="IIS导出结果"></p>
+<h2 id="为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”："><a href="#为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”：" class="headerlink" title="为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”："></a>为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”：</h2><p>:<img src="/img/vpn09.jpg" alt="IIS导出结果"></p>
+<h2 id="等待系统配置完成："><a href="#等待系统配置完成：" class="headerlink" title="等待系统配置完成："></a>等待系统配置完成：</h2><p>:<img src="/img/vpn10.jpg" alt="IIS导出结果"></p>
+<h2 id="系统显示服务已在运行中"><a href="#系统显示服务已在运行中" class="headerlink" title="系统显示服务已在运行中"></a>系统显示服务已在运行中</h2><p>:<img src="/img/vpn11.jpg" alt="IIS导出结果"></p>
+<h2 id="展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置："><a href="#展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置：" class="headerlink" title="展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置："></a>展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置：</h2><p>:<img src="/img/vpn12.jpg" alt="IIS导出结果"></p>
+<h2 id="本地连接如下图：两张图"><a href="#本地连接如下图：两张图" class="headerlink" title="本地连接如下图：两张图"></a>本地连接如下图：两张图</h2><p>:<img src="/img/vpn13.jpg" alt="IIS导出结果"><br>:<img src="/img/vpn14.jpg" alt="IIS导出结果"></p>
+<h2 id="VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”"><a href="#VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”" class="headerlink" title="VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”"></a>VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”</h2><p>:<img src="/img/vpn15.jpg" alt="IIS导出结果"></p>
+<h2 id="配置静态IP-VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）"><a href="#配置静态IP-VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）" class="headerlink" title="配置静态IP VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）"></a>配置静态IP VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）</h2><p>:<img src="/img/vpn16.jpg" alt="IIS导出结果"></p>
+<h2 id="配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误"><a href="#配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误" class="headerlink" title="配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误"></a>配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误</h2><p>:<img src="/img/vpn17.jpg" alt="IIS导出结果"></p>
+<h2 id="右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。"><a href="#右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。" class="headerlink" title="右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。"></a>右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。</h2><p>:<img src="/img/vpn18.jpg" alt="IIS导出结果"></p>
+<h1 id="第三阶段：新建VPN使用用户，并设置简单的安全组"><a href="#第三阶段：新建VPN使用用户，并设置简单的安全组" class="headerlink" title="第三阶段：新建VPN使用用户，并设置简单的安全组"></a>第三阶段：新建VPN使用用户，并设置简单的安全组</h1><h2 id="新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建"><a href="#新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建" class="headerlink" title="新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建"></a>新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建</h2><p>:<img src="/img/vpn19.jpg" alt="IIS导出结果"></p>
+<h2 id="创建用户组后我们来创建VPN的用户：如下图所示设置"><a href="#创建用户组后我们来创建VPN的用户：如下图所示设置" class="headerlink" title="创建用户组后我们来创建VPN的用户：如下图所示设置"></a>创建用户组后我们来创建VPN的用户：如下图所示设置</h2><p>:<img src="/img/vpn20.jpg" alt="IIS导出结果"></p>
+<h2 id="为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”"><a href="#为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”" class="headerlink" title="为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”"></a>为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”</h2><p>:<img src="/img/vpn21.jpg" alt="IIS导出结果"></p>
+<h2 id="点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组"><a href="#点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组" class="headerlink" title="点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组"></a>点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组</h2><p>:<img src="/img/vpn22.jpg" alt="IIS导出结果"></p>
+<p>这样整个VPN设置的登录就完成，您现在可以顺利的通过刚刚指导新建用户名称来登录属于您自己的VPN，并躲过公司的网络封锁。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VPN/" rel="tag">#VPN</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/06/IIS/" rel="next" title="IIS导出域名相对应的文件路径">
+                <i class="fa fa-chevron-left"></i> IIS导出域名相对应的文件路径
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/16/vpndj/"
+           data-title="win服务器VPN搭建" data-url="http://blog.sohua.cc/2016/11/16/vpndj/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Sohua" />
+          <p class="site-author-name" itemprop="name">Sohua</p>
+          <p class="site-description motion-element" itemprop="description">鞭策自我，完善自我</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wufenghua" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chenghuayi" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/vvfh/" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/name-sohua" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一阶段：安装角色"><span class="nav-number">1.</span> <span class="nav-text">第一阶段：安装角色</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加角色"><span class="nav-number">1.1.</span> <span class="nav-text">添加角色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#勾选”网络策略和访问服务”"><span class="nav-number">1.2.</span> <span class="nav-text">勾选”网络策略和访问服务”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查配置"><span class="nav-number">1.3.</span> <span class="nav-text">检查配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把图上选项全勾上"><span class="nav-number">1.4.</span> <span class="nav-text">把图上选项全勾上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后：确认安装阶段"><span class="nav-number">1.5.</span> <span class="nav-text">然后：确认安装阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一步安装"><span class="nav-number">1.6.</span> <span class="nav-text">下一步安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二阶段：配置VPN服务器"><span class="nav-number">2.</span> <span class="nav-text">第二阶段：配置VPN服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#点击进入服务器管理器——路由和远程访问"><span class="nav-number">2.1.</span> <span class="nav-text">点击进入服务器管理器——路由和远程访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）"><span class="nav-number">2.2.</span> <span class="nav-text">右键点击“路由和远程访问“——点击“配置并启动路由和远程访问”如下图：（因为本人已经配置过所以灰色，但你们配置的时候并不是灰色的）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹出配置向导，并点击下一步："><span class="nav-number">2.3.</span> <span class="nav-text">弹出配置向导，并点击下一步：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请务必选择“自定义配置”"><span class="nav-number">2.4.</span> <span class="nav-text">请务必选择“自定义配置”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”："><span class="nav-number">2.5.</span> <span class="nav-text">为了后期不必要的麻烦我们“全选”所有选项并点击“下一步”：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等待系统配置完成："><span class="nav-number">2.6.</span> <span class="nav-text">等待系统配置完成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统显示服务已在运行中"><span class="nav-number">2.7.</span> <span class="nav-text">系统显示服务已在运行中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置："><span class="nav-number">2.8.</span> <span class="nav-text">展开后请点击“IPv4”——右键点击“NAT”——选择“新增接口”然后把“内部”接口和“本地接口”添加上，并“右键”——”属性“如下设置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地连接如下图：两张图"><span class="nav-number">2.9.</span> <span class="nav-text">本地连接如下图：两张图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”"><span class="nav-number">2.10.</span> <span class="nav-text">VPN配置的最后一步：右键点击“路由和远程访问”——点击“属性”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置静态IP-VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）"><span class="nav-number">2.11.</span> <span class="nav-text">配置静态IP VPN地址分配列表，这里的IP地址段随您自己喜欢设置（就是说：客户端连上后所分配得到的IP，我这里只分配10个，视个人情况而定）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误"><span class="nav-number">2.12.</span> <span class="nav-text">配置“网络策略服务”如果不配置，在您登录VPN的时候就会报一个“812”的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。"><span class="nav-number">2.13.</span> <span class="nav-text">右键点击“策略名称”——点击“属性”如下图配置：在没有允许策略前是红色的，两个都允许后显示绿色，配置后按“确认”，这是再配置登录就不会出现“812”错误。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三阶段：新建VPN使用用户，并设置简单的安全组"><span class="nav-number">3.</span> <span class="nav-text">第三阶段：新建VPN使用用户，并设置简单的安全组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建"><span class="nav-number">3.1.</span> <span class="nav-text">新建VPN用户组：点击“服务器管理器”——右键点击“组”并如下图新建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户组后我们来创建VPN的用户：如下图所示设置"><span class="nav-number">3.2.</span> <span class="nav-text">创建用户组后我们来创建VPN的用户：如下图所示设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”"><span class="nav-number">3.3.</span> <span class="nav-text">为了安全起见，我们做一下简单的本地组策略，防止用户乱登录服务器，点击“本地安全策略组”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组"><span class="nav-number">3.4.</span> <span class="nav-text">点击进入：我建议大家设置这里两个策略，方式用户直接无聊登录服务器，把策略应用到你相应的“用户组”即可，我这里是VPN用户组</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sohua</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sohua"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
