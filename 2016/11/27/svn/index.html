@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="IIS," />
+  <meta name="keywords" content="svn," />
 
 
 
@@ -84,18 +84,40 @@
 
 
 
-<meta name="description" content="IIS导出指定文件夹：用过win2003/2008/2012系列的服务器，通常新接手的公司服务器会有很多命名不规范，很难根据域名而查找相关指定的文件夹。IIS本身导出只能导出域名不能导出域名指向的地址，所以我用批处理写了一个导出IIS信息的对应信息。">
+<meta name="description" content="安装软件准备 TortoiseSVN_1.9.4.27285_x64.msi（SVN客户端） LanguagePack_1.9.4.27285-x64-zh_CN.msi（SVN客户端汉化包） VisualSVN-Server-3.5.6-x64.msi（SVN版本控制）
+博主百度云盘分享:http://pan.baidu.com/s/1c2Fr1Oc（64位） :或者按照以下步骤里面提供的官网网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IIS导出域名相对应的文件路径">
-<meta property="og:url" content="http://blog.sohua.cc/2016/11/06/IIS/index.html">
+<meta property="og:title" content="windows SVN服务器搭建和使用（一）">
+<meta property="og:url" content="http://blog.sohua.cc/2016/11/27/svn/index.html">
 <meta property="og:site_name" content="搜华博客">
-<meta property="og:description" content="IIS导出指定文件夹：用过win2003/2008/2012系列的服务器，通常新接手的公司服务器会有很多命名不规范，很难根据域名而查找相关指定的文件夹。IIS本身导出只能导出域名不能导出域名指向的地址，所以我用批处理写了一个导出IIS信息的对应信息。">
-<meta property="og:image" content="http://blog.sohua.cc/img/iis.png">
-<meta property="og:updated_time" content="2016-11-07T03:40:57.027Z">
+<meta property="og:description" content="安装软件准备 TortoiseSVN_1.9.4.27285_x64.msi（SVN客户端） LanguagePack_1.9.4.27285-x64-zh_CN.msi（SVN客户端汉化包） VisualSVN-Server-3.5.6-x64.msi（SVN版本控制）
+博主百度云盘分享:http://pan.baidu.com/s/1c2Fr1Oc（64位） :或者按照以下步骤里面提供的官网网">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn07.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn01.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn02.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn03.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn04.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn05.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn06.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn08.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn09.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn10.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn11.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn12.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn13.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn15.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn16.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn17.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn18.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn19.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn20.png">
+<meta property="og:image" content="http://blog.sohua.cc/img/svn21.png">
+<meta property="og:updated_time" content="2016-11-27T07:11:43.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IIS导出域名相对应的文件路径">
-<meta name="twitter:description" content="IIS导出指定文件夹：用过win2003/2008/2012系列的服务器，通常新接手的公司服务器会有很多命名不规范，很难根据域名而查找相关指定的文件夹。IIS本身导出只能导出域名不能导出域名指向的地址，所以我用批处理写了一个导出IIS信息的对应信息。">
-<meta name="twitter:image" content="http://blog.sohua.cc/img/iis.png">
+<meta name="twitter:title" content="windows SVN服务器搭建和使用（一）">
+<meta name="twitter:description" content="安装软件准备 TortoiseSVN_1.9.4.27285_x64.msi（SVN客户端） LanguagePack_1.9.4.27285-x64-zh_CN.msi（SVN客户端汉化包） VisualSVN-Server-3.5.6-x64.msi（SVN版本控制）
+博主百度云盘分享:http://pan.baidu.com/s/1c2Fr1Oc（64位） :或者按照以下步骤里面提供的官网网">
+<meta name="twitter:image" content="http://blog.sohua.cc/img/svn07.png">
 
 
 
@@ -116,10 +138,10 @@
 
 
 
-  <link rel="canonical" href="http://blog.sohua.cc/2016/11/06/IIS/"/>
+  <link rel="canonical" href="http://blog.sohua.cc/2016/11/27/svn/"/>
 
 
-  <title> IIS导出域名相对应的文件路径 | 搜华博客 </title>
+  <title> windows SVN服务器搭建和使用（一） | 搜华博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +281,7 @@
             
             
               
-                IIS导出域名相对应的文件路径
+                windows SVN服务器搭建和使用（一）
               
             
           </h1>
@@ -271,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T00:00:00+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2016-11-27T11:29:05+08:00" content="2016-11-27">
+              2016-11-27
             </time>
           </span>
 
@@ -282,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/06/IIS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/IIS/" itemprop="commentsCount"></span>
+                <a href="/2016/11/27/svn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/svn/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -311,10 +333,16 @@
       
 
       
-        <h2 id="IIS导出指定文件夹："><a href="#IIS导出指定文件夹：" class="headerlink" title="IIS导出指定文件夹："></a>IIS导出指定文件夹：</h2><p>用过win2003/2008/2012系列的服务器，通常新接手的公司服务器会有很多命名不规范，很难根据域名而查找相关指定的文件夹。IIS本身导出只能导出域名不能导出域名指向的地址，所以我用批处理写了一个导出IIS信息的对应信息。<br><a id="more"></a></p>
-<h2 id="亲测可用："><a href="#亲测可用：" class="headerlink" title="亲测可用："></a>亲测可用：</h2><p>在服务器上创建txt文本，把以下代码复制进去，再把文件后缀改成.vbs。双击即可</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">Set Fso=CreateObject(&quot;Scripting.FileSystemObject&quot;)</div><div class="line">Set WWWObj=GetObject(&quot;IIS://localhost/w3svc&quot;)</div><div class="line"></div><div class="line">Set F = Fso.CreateTextFile(&quot;所有站点绑定信息.txt&quot;, True)</div><div class="line"></div><div class="line">i=0</div><div class="line">Dim Str</div><div class="line">&apos;获取IIS中的站点列表</div><div class="line">For Each SiteObj In WWWObj</div><div class="line"> If SiteObj.Class=&quot;IIsWebServer&quot; Then</div><div class="line">  Binds=SiteObj.ServerBindings</div><div class="line">  Str=&quot;&quot;</div><div class="line">  IsBind=True &apos;是否绑定域名</div><div class="line">  WriteStr=&quot;&quot;</div><div class="line">  For Each Tmp In Binds</div><div class="line">   If Split(Tmp,&quot;:&quot;)(2)=&quot;&quot; Then</div><div class="line">    IsBind=False</div><div class="line">   Else</div><div class="line">    IsBind=True</div><div class="line">   End If</div><div class="line"></div><div class="line">   If Str=&quot;&quot; Then</div><div class="line">    Str=Tmp</div><div class="line">   Else</div><div class="line">    Str=Str &amp; &quot;,&quot; &amp; Tmp</div><div class="line">   End If</div><div class="line">  Next</div><div class="line">  If Not IsBind Then</div><div class="line">   s=&quot;（警告：未绑定）&quot;</div><div class="line">  Else</div><div class="line">   s=&quot;&quot;</div><div class="line">  End If</div><div class="line">  Set webSite = GetObject(&quot;IIS://Localhost/W3SVC/&quot; &amp; SiteObj.Name &amp; &quot;/Root&quot;)</div><div class="line">  </div><div class="line">  WriteStr=Fill(SiteObj.ServerComment &amp; s,40) &amp; Fill(Str,120) &amp; &quot; &quot; &amp; webSite.Path</div><div class="line">  F.WriteLine WriteStr</div><div class="line">  Set Obj=Nothing</div><div class="line"> End If</div><div class="line">Next</div><div class="line"></div><div class="line">F.Close()</div><div class="line">Set WWWObj=Nothing</div><div class="line">Set Fso=Nothing</div><div class="line"></div><div class="line"></div><div class="line">Function Fill(ByRef Str,ByRef L)</div><div class="line"> Dim s,i</div><div class="line"> If Len(Str)&gt;=L Then</div><div class="line">  Fill=Str</div><div class="line">  Exit Function</div><div class="line"> End If</div><div class="line"> s=&quot;&quot;</div><div class="line"> For i=0 To L</div><div class="line">  s=s &amp; &quot; &quot;</div><div class="line"> Next</div><div class="line"> s=Str &amp; s</div><div class="line"> Fill=Left(s,L)</div><div class="line">End Function</div></pre></td></tr></table></figure>
-<h2 id="最终结果截图"><a href="#最终结果截图" class="headerlink" title="最终结果截图"></a>最终结果截图</h2><p>:<img src="/img/iis.png" alt="IIS导出结果"></p>
+        <h3 id="安装软件准备"><a href="#安装软件准备" class="headerlink" title="安装软件准备"></a>安装软件准备</h3><p> TortoiseSVN_1.9.4.27285_x64.msi（SVN客户端）<br> LanguagePack_1.9.4.27285-x64-zh_CN.msi（SVN客户端汉化包）<br> VisualSVN-Server-3.5.6-x64.msi（SVN版本控制）</p>
+<p>博主百度云盘分享:<a href="http://pan.baidu.com/s/1c2Fr1Oc（64位）" target="_blank" rel="external">http://pan.baidu.com/s/1c2Fr1Oc（64位）</a><br> :<img src="/img/svn07.png" alt="Subversion下载包"><br>或者按照以下步骤里面提供的官网网址进行下载。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>64位系统的可以直接在我分享的百度云盘下载快点，如果是32位就按照我以下的操作就可以了。</p>
+<h4 id="Subversion下载"><a href="#Subversion下载" class="headerlink" title="Subversion下载"></a>Subversion下载</h4><p>现在已经迁移到 apache网站了。下载地址<br><a href="http://subversion.apache.org/packages.html" target="_blank" rel="external">http://subversion.apache.org/packages.html</a><br>进入网页拖到最底部就能看到<br>windows操作系统下面的二进制文件包一共有5种，如图<br>:<img src="/img/svn01.png" alt="Subversion下载包"><br>个人认为最好用VisualSVN server 服务端和 TortoiseSVN客户端搭配使用.<br>点开VisualSVN ，国外网站会有点卡，稍等片刻呃。<br>:<img src="/img/svn02.png" alt="Subversion下载包"></p>
+<h4 id="TortoiseSVN下载"><a href="#TortoiseSVN下载" class="headerlink" title="TortoiseSVN下载"></a>TortoiseSVN下载</h4><p> 官网下载地址:<a href="http://tortoisesvn.net/downloads.html" target="_blank" rel="external">http://tortoisesvn.net/downloads.html</a><br>:<img src="/img/svn03.png" alt="TortoiseSVN下载包"></p>
+<h4 id="中文包下载"><a href="#中文包下载" class="headerlink" title="中文包下载"></a>中文包下载</h4><p>:<img src="/img/svn04.png" alt="中文包"></p>
+<p>下载完后，应该有这些安装包，如下图：<br>:<img src="/img/svn05.png" alt="中文包"><br> TortoiseSVN简体中文语言包<br> :<img src="/img/svn06.png" alt="中文包"></p>
+<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><h4 id="VisualSVN-server安装包"><a href="#VisualSVN-server安装包" class="headerlink" title="VisualSVN server安装包"></a>VisualSVN server安装包</h4><p>先安装VisualSVN server的安装包,双击VisualSVN server安装包,如图:<br> :<img src="/img/svn08.png" alt="VisualSVN安装"><br>点Next,进入下一步,如图:<br> :<img src="/img/svn09.png" alt="VisualSVN安装"><br>同意，点Next，进入下一步,如图:<br> :<img src="/img/svn10.png" alt="VisualSVN安装"><br> 点Standard Edition，进入设置路径，然后点next,如图<br> :<img src="/img/svn11.png" alt="VisualSVN安装"><br>  :<img src="/img/svn12.png" alt="VisualSVN安装"><br>  点Install，开始进入安装<br>:<img src="/img/svn13.png" alt="VisualSVN安装"><br>正在安装中<br>:<img src="/img/svn15.png" alt="VisualSVN安装"><br>安装完成<br>:<img src="/img/svn16.png" alt="VisualSVN安装"><br>安装完成后,启动VisualSVN Server Manager,如图:<br>这个是安装默认路径C:\Program Files\VisualSVN Server\bin<br>:<img src="/img/svn17.png" alt="VisualSVN安装"></p>
+<h4 id="接下来安装TortoiseSVN"><a href="#接下来安装TortoiseSVN" class="headerlink" title="接下来安装TortoiseSVN."></a>接下来安装TortoiseSVN.</h4><p>这个非常简单，双击安装包，一路下一步Next就行了，完成后，桌面右击，如图<br>:<img src="/img/svn18.png" alt="VisualSVN安装"></p>
+<h4 id="中文包安装"><a href="#中文包安装" class="headerlink" title="中文包安装"></a>中文包安装</h4><p>直接双击中文包，一路下一步完成后。右击桌面<br>:<img src="/img/svn19.png" alt="VisualSVN安装"><br>最后选中中文就完成了<br>:<img src="/img/svn20.png" alt="VisualSVN安装"><br>中文效果图<br>:<img src="/img/svn21.png" alt="VisualSVN安装"></p>
 
       
     </div>
@@ -337,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IIS/" rel="tag">#IIS</a>
+            <a href="/tags/svn/" rel="tag">#svn</a>
           
         </div>
       
@@ -346,16 +374,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/04/第一个博客/" rel="next" title="初次体验">
-                <i class="fa fa-chevron-left"></i> 初次体验
+              <a href="/2016/11/16/vpndj/" rel="next" title="win服务器VPN搭建">
+                <i class="fa fa-chevron-left"></i> win服务器VPN搭建
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/16/vpndj/" rel="prev" title="win服务器VPN搭建">
-                win服务器VPN搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/27/svn-1/" rel="prev" title="svn">
+                svn <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -382,8 +410,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/IIS/"
-           data-title="IIS导出域名相对应的文件路径" data-url="http://blog.sohua.cc/2016/11/06/IIS/">
+      <div class="ds-thread" data-thread-key="2016/11/27/svn/"
+           data-title="windows SVN服务器搭建和使用（一）" data-url="http://blog.sohua.cc/2016/11/27/svn/">
       </div>
     
   </div>
@@ -505,7 +533,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IIS导出指定文件夹："><span class="nav-number">1.</span> <span class="nav-text">IIS导出指定文件夹：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#亲测可用："><span class="nav-number">2.</span> <span class="nav-text">亲测可用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终结果截图"><span class="nav-number">4.</span> <span class="nav-text">最终结果截图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装软件准备"><span class="nav-number">1.</span> <span class="nav-text">安装软件准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Subversion下载"><span class="nav-number">2.1.</span> <span class="nav-text">Subversion下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TortoiseSVN下载"><span class="nav-number">2.2.</span> <span class="nav-text">TortoiseSVN下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文包下载"><span class="nav-number">2.3.</span> <span class="nav-text">中文包下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件安装"><span class="nav-number">3.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VisualSVN-server安装包"><span class="nav-number">3.1.</span> <span class="nav-text">VisualSVN server安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来安装TortoiseSVN"><span class="nav-number">3.2.</span> <span class="nav-text">接下来安装TortoiseSVN.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文包安装"><span class="nav-number">3.3.</span> <span class="nav-text">中文包安装</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
